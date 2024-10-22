@@ -1,6 +1,7 @@
 import cv2 #para processamento de imagem
 import mediapipe as mp #para imagems
 import pyautogui
+import time
 
 #cordenadas dos pontos
 mp_maos = mp.solutions.hands
@@ -14,6 +15,7 @@ resolucao_x = 1280
 resolucao_y = 720
 camera.set(cv2.CAP_PROP_FRAME_WIDTH, resolucao_x)
 camera.set(cv2.CAP_PROP_FRAME_HEIGHT, resolucao_y)
+
 
 
 def pegar_coordenadas( img, lado_invertido = False ):
@@ -53,21 +55,19 @@ def pegar_coordenadas( img, lado_invertido = False ):
                                     mp_maos.HAND_CONNECTIONS) #linha entre os pontos
     return img, todas_maos
 
-
 def virar_lados( lado ):
-    
-    if lado:    
-        if lado == 'Right':            
-            pyautogui.keyDown('right')
-            cv2.waitKey(10)
-            pyautogui.keyUp('right')
-            #pyautogui.press('right')
 
+    if lado:
+        if lado == 'Right':
+            pyautogui.keyDown('right')
+            time.sleep(0.5)
+            pyautogui.keyUp('right')
+    
+    
         if lado == 'Left':
             pyautogui.keyDown('left')
-            cv2.waitKey(10)
+            time.sleep(0.5)
             pyautogui.keyUp('left')
-
 
 
 
@@ -83,8 +83,7 @@ while True:
     
     if len(todas_maos) > 0:
         virar_lados( todas_maos[0]['lado'] )
-        
-        
+
         
     '''print(todas_maos)'''
     

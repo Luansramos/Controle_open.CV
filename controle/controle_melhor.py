@@ -22,8 +22,8 @@ hands = mp.solutions.hands.Hands(
 
 mpDwaw = mp.solutions.drawing_utils
 
-setaDir = cv2.imread('seta direita.png')
-setaEsq = cv2.imread('seta esquerda.png')
+setaDir = cv2.imread('./controle/seta direita.png')
+setaEsq = cv2.imread('./controle/seta esquerda.png')
 
 setaDir = cv2.resize(setaDir,(100,100))
 setaEsq = cv2.resize(setaEsq,(100,100))

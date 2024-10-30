@@ -148,9 +148,9 @@ def update():
 
         # Movimento lateral do jogador (esquerda/direita)
         if held_keys['left arrow']:
-            player_car_collider.x -= move_speed * 0.5
+            player_car_collider.x -= move_speed * 0.20
         if held_keys['right arrow']:
-            player_car_collider.x += move_speed * 0.5
+            player_car_collider.x += move_speed * 0.20
 
         # Limitar o carro dentro da pista
         player_car_collider.x = clamp(player_car_collider.x, -2.5, 2.5)

@@ -14,8 +14,8 @@ hands = mp.solutions.hands.Hands(static_image_mode=False, max_num_hands=2)
 mpDraw = mp.solutions.drawing_utils
 
 # Carregando as imagens de setas e redimensionando
-setaDir = cv2.resize(cv2.imread('./jogo/seta direita.png'), (100, 100))
-setaEsq = cv2.resize(cv2.imread('./jogo/seta esquerda.png'), (100, 100))
+setaDir = cv2.resize(cv2.imread('./controle/seta direita.png'), (100, 100))
+setaEsq = cv2.resize(cv2.imread('./controle/seta esquerda.png'), (100, 100))
 
 # Inicializando o controlador de teclado
 kb = Controller()
